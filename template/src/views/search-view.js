@@ -19,7 +19,7 @@
  */
 export const toSearchView = (searchedGifs, searchTerm) => `
   <div id="movies">
-    <h1>Movies found for "${searchTerm}":</h1>
+    <h1>Gifs found for "${searchTerm}":</h1>
     <div class="content">
     ${searchedGifs.map((gif) => toSearchedItemView(gif)).join('')}
     </div>
