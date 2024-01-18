@@ -1,6 +1,6 @@
 export const toHomeView = () => `
 <div id="home">
-  <h1>Gifster</h1>
+  <h1>Gif(S)ter</h1>
   <div class="content">
     <p>Simple movie database app. You can:</p>
     <ul>
