@@ -14,7 +14,5 @@ export const EMPTY_HEART = '♡';
 
 export const API_KEY = '8hn1LkoWv2wIkMKj670q5ad0SZ85dlOV';
 
-export const trendingUrl = `https://api.gihpy.com/v1/gifs/trending?api_key=${API_KEY}&limit=25&offset=0&rating=g`;
-
-export const getTrendingUrl = (limit = 25, offset = 0) => `https://api.gihpy.com/v1/gifs/trending?api_key=
+export const getTrendingUrl = (limit = 25, offset = 0) => `https://api.giphy.com/v1/gifs/trending?api_key=
 ${API_KEY}&limit=${limit}&offset=${offset}&rating=g`;

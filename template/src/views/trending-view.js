@@ -31,7 +31,7 @@ export const toTrendingView = (trendingGifs) => {
 const toTrendingItemView = (trendingItem) => `
    <li>
        <a href="#/trending/${trendingItem.id}">
-       <img src="${trendingItem.image.fixed_width.url}" alt="${trendingItem.title}">
+       <img src="${trendingItem.images.fixed_width.url}" alt="${trendingItem.title}">
        </a>
 
    </li>
