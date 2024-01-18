@@ -16,3 +16,7 @@ export const API_KEY = '8hn1LkoWv2wIkMKj670q5ad0SZ85dlOV';
 
 export const getTrendingUrl = (limit = 25, offset = 0) => `https://api.giphy.com/v1/gifs/trending?api_key=
 ${API_KEY}&limit=${limit}&offset=${offset}&rating=g`;
+
+export const getSearchUrl = (q, limit = 25, offset = 0) => `https://api.giphy.com/v1/gifs/search?api_key=
+${API_KEY}&q=${q}&limit=${limit}&offset=${offset}&rating=g`;
+

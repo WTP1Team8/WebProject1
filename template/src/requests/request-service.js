@@ -1,6 +1,5 @@
-
-import { getTrendingUrl } from '../common/constants.js';
-import { getCategories, getMoviesGeneralInfo, getMoviesFullInfo, getMovieById, getCategory, searchMovies } from '../data/movies.js';
+import { getTrendingUrl, getSearchUrl } from '../common/constants.js';
+import { getCategories, getMoviesGeneralInfo, getMovieById, getCategory} from '../data/movies.js';
 
 
 /**
@@ -51,8 +50,42 @@ export const loadSingleMovie = (id) => {
   return movie;  
 };
 
-export const loadSearchMovies = (searchTerm = '') => {
-  const movies = searchMovies(searchTerm);
+/**
+ * 
+ * @param {string} query 
+ * @returns {Promise<Array<{
+* id: string,
+* rating: string,
+* title: string,
+* images: {
+*  fixed_width: {
+*  url: string,
+* },
+* },
+* user: {
+*  avatar_url: string,
+*  username: string,
+* },
+* }>>}
+ */
+export const loadSearchGifs = async (query = '') => {
+  // const response = await fetch(getSearchUrl(query));
+  // const result = await response.json();
+  
+  // return result.data
 
-  return movies;
+  try {
+    const response = await fetch(getSearchUrl(query));
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch data. Status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    return result.data;
+  } catch (error) {
+    console.error('Error fetching data:', error.message);
+    // Handle the error or rethrow it if necessary
+    throw error;
+  }
 };
