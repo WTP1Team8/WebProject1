@@ -7,7 +7,7 @@ import { toHomeView } from '../views/home-view.js';
 import { toMoviesFromCategoryView, toSingleMovieView } from '../views/movie-views.js';
 import { q, setActiveNav } from './helpers.js';
 import { getFavorites } from '../data/favorites.js';
-import { toTrendingView } from '../views/trending-view.js';
+import { toTrendingView, toSingleGifView} from '../views/trending-view.js';
 
 // public API
 export const loadPage = (page = '') => {
@@ -35,6 +35,13 @@ export const loadPage = (page = '') => {
   }
 
 };
+
+export const renderGifDetails = async(id) => {
+  const gifDetails = await loadSingleGif(id);
+
+  q(CONTAINER_SELECTOR).innerHTML = toSingleGifView(gifDetails);
+}
+
 
 export const renderMovieDetails = (id = null) => {
   const movie = loadSingleMovie(id);
