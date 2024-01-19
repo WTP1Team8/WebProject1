@@ -19,8 +19,8 @@
 export const toTrendingView = (trendingGifs) => {
    return `
    <section class="trending">
-   <h2>Trending</h2>
-   <ul>
+   <h2 id="text-trending"> Trending Giphy &#8482</h2>
+   <ul class="trending-gif">
    ${trendingGifs.map(toTrendingItemView).join('')}
    <ul>
    </section>

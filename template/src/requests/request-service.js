@@ -20,7 +20,7 @@ import { getCategories, getMoviesGeneralInfo, getMovieById, getCategory} from '.
 * }>>}
  */
 export const loadTrendingGifs = async() => {
-  const response = await fetch(getTrendingUrl(31));
+  const response = await fetch(getTrendingUrl(36));
   const result = await response.json();
   
     return result.data
