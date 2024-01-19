@@ -1,4 +1,4 @@
-import { getTrendingUrl, getSearchUrl } from '../common/constants.js';
+import { getTrendingUrl, getSearchUrl,getIdUrl } from '../common/constants.js';
 import { getCategories, getMoviesGeneralInfo, getMovieById, getCategory} from '../data/movies.js';
 
 

@@ -1,8 +1,9 @@
 import { HOME } from './common/constants.js';
 import { toggleFavoriteStatus } from './events/favorites-events.js';
 import { q } from './events/helpers.js';
-import { loadPage, renderCategory, renderMovieDetails } from './events/navigation-events.js';
+import { loadPage, renderCategory} from './events/navigation-events.js';
 import { renderSearchItems } from './events/search-events.js';
+import { renderGifDetails } from './events/navigation-events.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -22,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // show movie events
     if (event.target.classList.contains('view-movie-btn')) {
-      renderMovieDetails(+event.target.getAttribute('data-movie-id'));
+      renderGifDetails(event.target.getAttribute('data-movie-id'));
     }
 
     // toggle favorite event
