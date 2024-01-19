@@ -89,3 +89,11 @@ export const loadSearchGifs = async (query = '') => {
     throw error;
   }
 };
+
+
+export const loadSingleGif = async (id) => {
+  const response = await fetch(getIdUrl(id));
+  const result = await response.json();
+
+  return result.data;
+};
