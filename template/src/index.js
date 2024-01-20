@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // show movie events
-    if (event.target.classList.contains('view-movie-btn')) {
+    if (event.target.classList.contains('gif-link')) {
       renderGifDetails(event.target.getAttribute('data-movie-id'));
     }
 

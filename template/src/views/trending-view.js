@@ -30,13 +30,11 @@ export const toTrendingView = (trendingGifs) => {
 
 const toTrendingItemView = (trendingItem) => `
    <li>
-       <a href="#/trending/${trendingItem.id}">
-       <button class="view-movie-btn" data-movie-id="${trendingItem.id}">View details</button>
-       <img  src="${trendingItem.images.fixed_width.url}" alt="${trendingItem.title}">
+       <a href="#/trending/${trendingItem.id}" >
+           <img class="gif-link" data-movie-id="${trendingItem.id}" src="${trendingItem.images.fixed_width.url}" alt="${trendingItem.title}">
        </a>
-
    </li>
-   `
+`;
 
    export const toSingleGifView = (gifView) => {
       return `
