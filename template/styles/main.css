@@ -198,6 +198,7 @@ div.category {
   color: white;
 }
 
+
 /* Single movie styles */
 
 
@@ -255,7 +256,8 @@ div.gif-detailed .single {
 .trending-gif {
   display: grid;
   grid-template-columns: repeat(6, minmax(200px, 1fr));
-  gap: 10px;
+  gap: 15px;
+  padding: 5px;
   grid-auto-rows: 200px;
   grid-auto-flow: dense;
   padding-top: 50px; /* Добавете този ред за вмъкване на елементи на свободното място */
