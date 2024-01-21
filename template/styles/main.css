@@ -189,8 +189,6 @@ div.category {
   font-size: 20px;
   padding: 5px;
   color: rgb(222, 113, 255);
-  background-color: rgba(0, 0, 0, 0.5);
-  border: 1px solid black;
   cursor: pointer;
 }
 
@@ -288,3 +286,26 @@ div.gif-detailed .single {
   font-size: 20px;
   padding-bottom: 50px;
 }
+
+
+.gif-container {
+  position: relative;
+}
+
+.like-button {
+  
+  display: none;
+  position: absolute;
+  top: 8%;
+  right: -10%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px; /* Adjust the font size as needed */
+}
+
+.gif-container:hover .like-button {
+  display: block;
+}
+

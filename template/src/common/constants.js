@@ -8,9 +8,9 @@ export const ABOUT = "about";
 
 export const CONTAINER_SELECTOR = "#container";
 
-export const FULL_HEART = "❤";
+export const FULL_HEART = "&#x1F9E1";
 
-export const EMPTY_HEART = "♡";
+export const EMPTY_HEART = "&#x1F90D";
 
 export const API_KEY = "8hn1LkoWv2wIkMKj670q5ad0SZ85dlOV";
 
