@@ -1,31 +1,29 @@
-
 /**
- * 
+ *
  * @param {Array<{
-* id: string,
-* rating: string,
-* title: string,
-* images: {
-*  fixed_width: {
-*  url: string,
-* },
-* },
-* user: {
-*  avatar_url: string,
-*  username: string,
-* },
-* }>} trendingGifs 
-*/
+ * id: string,
+ * rating: string,
+ * title: string,
+ * images: {
+ *  fixed_width: {
+ *  url: string,
+ * },
+ * },
+ * user: {
+ *  avatar_url: string,
+ *  username: string,
+ * },
+ * }>} trendingGifs
+ */
 export const toTrendingView = (trendingGifs) => {
-   return `
+  return `
    <section class="trending">
    <h2 id="text-trending"> Trending Giphy &#8482</h2>
    <ul class="trending-gif">
-   ${trendingGifs.map(toTrendingItemView).join('')}
+   ${trendingGifs.map(toTrendingItemView).join("")}
    <ul>
    </section>
    `;
-
 };
 
 const toTrendingItemView = (trendingItem) => `
@@ -37,25 +35,25 @@ const toTrendingItemView = (trendingItem) => `
 `;
 
 export const toSingleGifView = (gifView) => {
-   return `
+  return `
           <div class="gif-detailed">
              <div class="poster">
                 <img  src="${gifView.images.fixed_width.url}" alt="${
-     gifView.title
-   }" class="single">
+    gifView.title
+  }" class="single">
              </div>
              <div class="movie-info">
                 ${toGifDetailed(gifView)}
              </div>
           </div>
        `;
- };
- 
- //  <img src="${gifView.user.avatar_url}" alt="${gifView.user.username}"></img>
- 
- const toGifDetailed = (gif) => {
-   if (gif.user && gif.user.username) {
-     return `
+};
+
+//  <img src="${gifView.user.avatar_url}" alt="${gifView.user.username}"></img>
+
+const toGifDetailed = (gif) => {
+  if (gif.user && gif.user.username) {
+    return `
     <div class="movie-detailed">
        <div class="poster">
           <p>Title:  ${gif.title}</p>
@@ -67,17 +65,18 @@ export const toSingleGifView = (gifView) => {
     </div>
  
  `;
-   } else {
-     return `
+  } else {
+    return `
     <div class="movie-detailed">
        <div class="poster">
           <p>Title:  ${gif.title}</p>
           <p>Rating: ${gif.rating}</p>
           <p>Uploaded: ${gif.import_datetime}</p>
-          <p>Source: ${gif.source}</p>
+          <p>Source: <a href="${gif.source}" target="_blank">View Source</a></p>
+         
        </div>
     </div>
  
  `;
-   }
- };
+  }
+};
