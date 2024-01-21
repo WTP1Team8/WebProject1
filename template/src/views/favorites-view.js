@@ -1,10 +1,10 @@
-import { toGifSimple } from './trending-view.js';
+import { toGifSimple } from "./trending-view.js";
 
 export const toFavoritesView = (gifs) => `
-<div id="movies">
-  <h1>Favorite movies:</h1>
-  <div class="content">
-    ${gifs.map(toGifSimple ).join('\n') || '<p>Add some movies to favorites to see them here.</p>'}
-  </div>
-</div>
+<section class="trending">
+<h2 id="text-trending"> Trending Giphy &#8482</h2>
+<ul class="trending-gif">
+${gifs.map(toTrendingItemView).join("") || '<p>Add some gifs to favorites to see them here.</p>'}
+<ul>
+</section>
 `;

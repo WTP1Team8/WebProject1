@@ -1,4 +1,5 @@
 import { EMPTY_HEART } from "../common/constants.js";
+import { renderFavoriteStatus } from "../events/favorites-events.js";
 /**
  *
  * @param {Array<{
@@ -30,10 +31,10 @@ export const toTrendingView = (trendingGifs) => {
 export const toTrendingItemView = (trendingItem) => `
    <li class="gif-container">
        <a href="#/trending/${trendingItem.id}" >
-           <img class="gif-link" data-movie-id="${trendingItem.id}" src="${trendingItem.images.fixed_width.url}" alt="${trendingItem.title}">
+           <img class="gif-link" data-gif-id="${trendingItem.id}" src="${trendingItem.images.fixed_width.url}" alt="${trendingItem.title}">
        </a>
        <button class="like-button" id="likeButton">
-           <span>${EMPTY_HEART}</span>
+       ${renderFavoriteStatus(trendingItem.id)}
        </button>
    </li>
 `;
@@ -87,12 +88,12 @@ const toGifDetailed = (gif) => {
 };
 
 
-export const toGifSimple = (gifView) => `
+export const toGifSimple = (gif) => `
 <div class="gif">
   <h1>${gif.title}</h1>
-  <img  src="${gifView.images.fixed_width.url}" alt="${
-    gifView.title
+  <img  src="${gif.images.fixed_width.url}" alt="${
+    gif.title
    }" class="single">
-  ${renderFavoriteStatus(movie.id)}
+  ${renderFavoriteStatus(gif.id)}
 </div>
 `;

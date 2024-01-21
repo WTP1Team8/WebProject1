@@ -35,7 +35,7 @@ export const toSearchView = (searchedGifs, searchTerm) => `
 export const toSearchedItemView = (searchedItem) => `
 <li>
     <a href="#/trending/${searchedItem.id}" >
-        <img class="gif-link" data-movie-id="${searchedItem.id}" src="${searchedItem.images.fixed_width.url}" alt="${searchedItem.title}">
+        <img class="gif-link" data-gif-id="${searchedItem.id}" src="${searchedItem.images.fixed_width.url}" alt="${searchedItem.title}">
         
     </a>
     <button class="like-button" id="likeButton">

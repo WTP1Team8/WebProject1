@@ -89,5 +89,5 @@ const renderAbout = () => {
 const renderFavorites = async () => {
   const favorites = getFavorites();
   const gifs = await Promise.all(favorites.map((id) => loadSingleGif(id)));
-  q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(gifs);
+  q(CONTAINER_SELECTOR).innerHTML = toTrendingView(gifs);
 };
