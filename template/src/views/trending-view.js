@@ -36,28 +36,48 @@ const toTrendingItemView = (trendingItem) => `
    </li>
 `;
 
-   export const toSingleGifView = (gifView) => {
-      return `
-         <div class="gif-detailed">
-            <div class="poster">
-               <p id='title'>Title: ${gifView.title}</p><br>
-               <img  src="${gifView.images.fixed_width.url}" alt="${gifView.title}" class="single">
-            </div>
-            <div class="movie-info">
-               ${toGifDetailed(gifView)}
-            </div>
-         </div>
-      `;
-   };
-    
-   //  <img src="${gifView.user.avatar_url}" alt="${gifView.user.username}"></img>
-
-const toGifDetailed = (gif) => `
-<div class="movie-detailed">
-   <div class="poster">
-      <p =>Rating: ${gif.rating}</p>
-      <p>User: ${gif.user.username}</p>
-      <img src="${gif.user.avatar_url}" alt="${gif.user.username}" class="avatar" style="max-width: 100px;">
-   </div>
-</div>
-`;
+export const toSingleGifView = (gifView) => {
+   return `
+          <div class="gif-detailed">
+             <div class="poster">
+                <img  src="${gifView.images.fixed_width.url}" alt="${
+     gifView.title
+   }" class="single">
+             </div>
+             <div class="movie-info">
+                ${toGifDetailed(gifView)}
+             </div>
+          </div>
+       `;
+ };
+ 
+ //  <img src="${gifView.user.avatar_url}" alt="${gifView.user.username}"></img>
+ 
+ const toGifDetailed = (gif) => {
+   if (gif.user && gif.user.username) {
+     return `
+    <div class="movie-detailed">
+       <div class="poster">
+          <p>Title:  ${gif.title}</p>
+          <p>User: ${gif.user.username}</p>
+          <p>Rating: ${gif.rating}</p>
+          <p>Uploaded: ${gif.import_datetime}</p>
+          <p>Avatar: <img src="${gif.user.avatar_url}" alt="${gif.user.username}" class="avatar" style="max-width: 100px;">
+       </div>
+    </div>
+ 
+ `;
+   } else {
+     return `
+    <div class="movie-detailed">
+       <div class="poster">
+          <p>Title:  ${gif.title}</p>
+          <p>Rating: ${gif.rating}</p>
+          <p>Uploaded: ${gif.import_datetime}</p>
+          <p>Source: ${gif.source}</p>
+       </div>
+    </div>
+ 
+ `;
+   }
+ };
