@@ -20,7 +20,7 @@
 export const toSearchView = (searchedGifs, searchTerm) => `
   <div id="movies">
     <h1>Gifs found for "${searchTerm}":</h1>
-    <div class="content">
+    <div class="trending-gif">
     ${searchedGifs.map((gif) => toSearchedItemView(gif)).join('')}
     </div>
   </div>
@@ -30,12 +30,11 @@ export const toSearchView = (searchedGifs, searchTerm) => `
  * 
  * @param {Object} searchedItem 
 */
-export const toSearchedItemView = (searchedItem) => `
+export const toSearchedItemView = (searchedItem)  => `
 <li>
-    <a href="#/trending/${searchedItem.id}">
-    <img src="${searchedItem.images.fixed_width.url}" alt="${searchedItem.title}">
+    <a href="#/trending/${searchedItem.id}" >
+        <img class="gif-link" data-movie-id="${searchedItem.id}" src="${searchedItem.images.fixed_width.url}" alt="${searchedItem.title}">
     </a>
-
 </li>
 `
 
