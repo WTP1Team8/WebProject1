@@ -31,14 +31,15 @@ export const toTrendingView = (trendingGifs) => {
 export const toTrendingItemView = (trendingItem) => `
    <li class="gif-container">
        <a href="#/trending/${trendingItem.id}" >
-           <img class="gif-link" data-gif-id="${trendingItem.id}" src="${trendingItem.images.fixed_width.url}" alt="${trendingItem.title}">
+           <img class="gif-link" data-gif-id="${trendingItem.id}" src="${
+  trendingItem.images.fixed_width.url
+}" alt="${trendingItem.title}">
        </a>
        <button class="like-button" id="likeButton">
        ${renderFavoriteStatus(trendingItem.id)}
        </button>
    </li>
 `;
-
 
 export const toSingleGifView = (gifView) => {
   return `
@@ -60,7 +61,7 @@ export const toSingleGifView = (gifView) => {
 const toGifDetailed = (gif) => {
   if (gif.user && gif.user.username) {
     return `
-    <div class="movie-detailed">
+    <div class="gif-detailed">
        <div class="poster">
           <p>Title:  ${gif.title}</p>
           <p>User: ${gif.user.username}</p>
@@ -73,9 +74,10 @@ const toGifDetailed = (gif) => {
  `;
   } else {
     return `
-    <div class="movie-detailed">
+    <div class="gif-detailed">
        <div class="poster">
           <p>Title:  ${gif.title}</p>
+          <p>User: unknown &#128577</p>
           <p>Rating: ${gif.rating}</p>
           <p>Uploaded: ${gif.import_datetime}</p>
           <p>Source: <a href="${gif.source}" target="_blank">View Source</a></p>
@@ -87,13 +89,10 @@ const toGifDetailed = (gif) => {
   }
 };
 
-
 export const toGifSimple = (gif) => `
 <div class="gif">
   <h1>${gif.title}</h1>
-  <img  src="${gif.images.fixed_width.url}" alt="${
-    gif.title
-   }" class="single">
+  <img  src="${gif.images.fixed_width.url}" alt="${gif.title}" class="single">
   ${renderFavoriteStatus(gif.id)}
 </div>
 `;
