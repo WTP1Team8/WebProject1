@@ -10,8 +10,6 @@ import {
   loadSingleGif,
 } from "../requests/request-service.js";
 import { toAboutView } from "../views/about-view.js";
-import { toCategoriesView } from "../views/category-view.js";
-import { toFavoritesView } from "../views/favorites-view.js";
 import { toHomeView } from "../views/home-view.js";
 import { q, setActiveNav } from "./helpers.js";
 import { getFavorites } from "../data/favorites.js";
