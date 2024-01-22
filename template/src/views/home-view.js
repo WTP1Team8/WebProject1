@@ -4,7 +4,6 @@ export const toHomeView = () => `
   <div class="content">
     <p>Single page app</p>
     <ul>
-      <li>Browse categories</li>
       <li>Browse giphy's</li>
       <li>Add and remove giphy from favorites</li>
       <li>Search for giphy by title</li>
