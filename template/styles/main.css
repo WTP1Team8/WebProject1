@@ -266,3 +266,26 @@ div.gif-detailed .single {
 .gif-random:hover .random-button {
   display: block;
 }
+
+
+.single {
+
+  height: 208px;
+  width: 208px;
+  
+}
+
+.poster-1 {
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 5pc;
+  font-size: 13px;;
+}
+
+.poster-2 {
+  color:white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 10pc;
+  margin-left: 17px;
+  font-size: 15px;;
+}

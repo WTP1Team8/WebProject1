@@ -74,7 +74,7 @@ const toGifDetailed = (gif) => {
   if (gif.user && gif.user.username) {
     return `
     <div class="gif-detailed">
-       <div class="poster">
+       <div class="poster-1">
           <p>Title:  ${gif.title}</p>
           <p>User: ${gif.user.username}</p>
           <p>Rating: ${gif.rating}</p>
@@ -87,7 +87,7 @@ const toGifDetailed = (gif) => {
   } else {
     return `
     <div class="gif-detailed">
-       <div class="poster">
+       <div class="poster-2">
           <p>Title:  ${gif.title}</p>
           <p>User: unknown &#128577</p>
           <p>Rating: ${gif.rating}</p>
