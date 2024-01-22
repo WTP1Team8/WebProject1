@@ -9,7 +9,6 @@ import { removeFavorite } from "./data/favorites.js";
 document.addEventListener("DOMContentLoaded", () => {
   // add global listener
   document.addEventListener("click", (event) => {
-    
     // nav events
     if (event.target.classList.contains("nav-link")) {
       loadPage(event.target.getAttribute("data-page"));
@@ -22,19 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // toggle favorite event
     if (event.target.classList.contains("favorite")) {
-      console.log(event.target.getAttribute("data-gif-id"));
       toggleFavoriteStatus(event.target.getAttribute("data-gif-id"));
-    }
 
-    if (
-      event.target.classList.contains("favorite") &&
-      q("#favorites").classList.contains("active")
-    ) {
-      const heartSpan = event.target;
-      removeFavorite(heartSpan.getAttribute("data-gif-id"));
-      heartSpan.classList.remove("active");
-      heartSpan.innerHTML = EMPTY_HEART;
-      loadPage(FAVORITES);
+      if (q("#favorites").classList.contains("active")) {
+        loadPage(FAVORITES);
+      }
     }
   });
 

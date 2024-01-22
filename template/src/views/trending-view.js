@@ -40,6 +40,19 @@ export const toTrendingItemView = (trendingItem) => `
    </li>
 `;
 
+export const toTrendingRandomView = (trendingItem) => `
+   <li class="gif-random">
+       <a href="#/trending/${trendingItem.id}" >
+           <img class="gif-link" data-gif-id="${trendingItem.id}" src="${
+  trendingItem.images.fixed_width.url
+}" alt="${trendingItem.title}">
+       </a>
+       <button class="random-button" id="random">
+       ${renderFavoriteStatus(trendingItem.id)}
+       </button>
+   </li>
+`;
+
 export const toSingleGifView = (gifView) => {
   return `
           <div class="gif-detailed">

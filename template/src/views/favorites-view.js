@@ -1,11 +1,12 @@
-import { toTrendingItemView } from "./trending-view.js";
+import { toTrendingRandomView } from "./trending-view.js";
 import { getRandomUrl } from "../common/constants.js";
+
 
 export const toRandomItemView = async (randomGif) => `
 
 <div>
     <h2>You don't have a favorite GIF, here's a random one you may like:</h2>
-    ${toTrendingItemView(randomGif)}
+    ${toTrendingRandomView(randomGif)}
 </div>
 
 `
