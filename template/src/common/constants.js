@@ -29,3 +29,6 @@ ${API_KEY}&q=${q}&limit=${limit}&offset=${offset}&rating=g`;
 
 export const getIdUrl = (id) =>
   `https://api.giphy.com/v1/gifs/${id}?api_key=8hn1LkoWv2wIkMKj670q5ad0SZ85dlOV&rating=g`;
+
+
+export const getRandomUrl = () => `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}`
