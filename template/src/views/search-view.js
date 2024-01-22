@@ -1,6 +1,5 @@
 import { toTrendingItemView } from "./trending-view.js";
 import { EMPTY_HEART } from "../common/constants.js";
-import { toTrendingView } from "./trending-view.js";
 /**
  *
  * @param {Array<{

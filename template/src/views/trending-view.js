@@ -1,4 +1,3 @@
-import { EMPTY_HEART } from "../common/constants.js";
 import { renderFavoriteStatus } from "../events/favorites-events.js";
 /**
  *
@@ -89,10 +88,4 @@ const toGifDetailed = (gif) => {
   }
 };
 
-export const toGifSimple = (gif) => `
-<div class="gif">
-  <h1>${gif.title}</h1>
-  <img  src="${gif.images.fixed_width.url}" alt="${gif.title}" class="single">
-  ${renderFavoriteStatus(gif.id)}
-</div>
-`;
+

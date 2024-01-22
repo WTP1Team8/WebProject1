@@ -1,4 +1,3 @@
-import { toTrendingItemView } from "./trending-view.js";
 
 export const toFavoritesView = (gifs) => `
 <section class="trending">
