@@ -4,10 +4,12 @@ import {
   FAVORITES,
   HOME,
   TRENDING,
+  UPLOADED
 } from "../common/constants.js";
 import {
   loadTrendingGifs,
   loadSingleGif,
+  loadUploadedGifs,
 } from "../requests/request-service.js";
 import { toAboutView } from "../views/about-view.js";
 import { toHomeView } from "../views/home-view.js";
@@ -31,6 +33,10 @@ export const loadPage = (page = "") => {
     case FAVORITES:
       setActiveNav(FAVORITES);
       return renderFavorites();
+
+    case UPLOADED:
+      setActiveNav(UPLOADED);
+      return renderUploaded();
 
     case ABOUT:
       setActiveNav(ABOUT);
@@ -77,3 +83,9 @@ const renderFavorites = async () => {
   q(CONTAINER_SELECTOR).innerHTML = await toRandomItemView(randomGif);
   }
 };
+
+
+const renderUploaded = async () => {
+  const uploadedGifs = await loadUploadedGifs();
+  q(CONTAINER_SELECTOR).innerHTML = toTrendingView(uploadedGifs);
+}

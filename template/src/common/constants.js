@@ -4,6 +4,8 @@ export const TRENDING = "trending";
 
 export const FAVORITES = "favorites";
 
+export const UPLOADED = 'uploaded'
+
 export const ABOUT = "about";
 
 export const CONTAINER_SELECTOR = "#container";

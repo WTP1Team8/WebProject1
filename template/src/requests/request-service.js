@@ -71,3 +71,11 @@ export const loadSingleGif = async (id) => {
 
   return result.data;
 };
+
+
+
+export const loadUploadedGifs = () => {
+
+  return
+}
+
