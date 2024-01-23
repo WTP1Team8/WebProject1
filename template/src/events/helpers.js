@@ -21,6 +21,6 @@ export const setActiveNav = (page) => {
       .getAttribute('data-page') === page
       ? element.classList.add('active')
       : element.classList.remove('active')
-      );
+    );
 };
 

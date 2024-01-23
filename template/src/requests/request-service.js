@@ -1,4 +1,4 @@
-import { getTrendingUrl, getSearchUrl, getIdUrl } from "../common/constants.js";
+import { getTrendingUrl, getSearchUrl, getIdUrl } from '../common/constants.js';
 /**
  *
  * @returns {Promise<Array<{
@@ -41,12 +41,7 @@ export const loadTrendingGifs = async () => {
  * },
  * }>>}
  */
-export const loadSearchGifs = async (query = "") => {
-  // const response = await fetch(getSearchUrl(query));
-  // const result = await response.json();
-
-  // return result.data
-
+export const loadSearchGifs = async (query = '') => {
   try {
     const response = await fetch(getSearchUrl(query));
 
@@ -57,12 +52,15 @@ export const loadSearchGifs = async (query = "") => {
     const result = await response.json();
     return result.data;
   } catch (error) {
-    console.error("Error fetching data:", error.message);
-    // Handle the error or rethrow it if necessary
-    throw error;
+    return `Error fetching data: ${error.message}`;
   }
 };
 
+/**
+ * Loads a single GIF by its ID.
+ * @param {string} id - The ID of the GIF to load.
+ * @returns {Promise<Object>} - A promise that resolves to the loaded GIF data.
+ */
 export const loadSingleGif = async (id) => {
   const response = await fetch(getIdUrl(id));
   if (response.ok) {

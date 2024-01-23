@@ -1,4 +1,4 @@
-import { FAVORITES, HOME, EMPTY_HEART, UPLOADED } from "./common/constants.js";
+import { FAVORITES, HOME, UPLOADED } from "./common/constants.js";
 import { toggleFavoriteStatus } from "./events/favorites-events.js";
 import { addUploaded } from "./data/uploaded.js";
 import { q } from "./events/helpers.js";
@@ -33,16 +33,17 @@ document.addEventListener("DOMContentLoaded", () => {
       (async () => {
         event.preventDefault();
 
-        addUploaded(await getUploadGif())
+        addUploaded(await getUploadGif());
         loadPage(UPLOADED);
       })();
-
-      
     }
   });
 
   // search events
   q("input#search").addEventListener("input", (e) => {
+    if (q("#favorites").classList.contains("active")) {
+      q("#favorites").classList.remove("active");
+    }
     renderSearchItems(e.target.value);
   });
 
