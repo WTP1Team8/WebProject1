@@ -40,15 +40,15 @@ div#app {
 
 header {
   grid-area: header;
-  height: 220px;
+  height: 250px;
   background: url("../images/GIPHY\ Transparent\ 270px.png");
-  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   padding-top: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 220px;
 }
 
 header img {
@@ -71,13 +71,13 @@ nav {
 }
 
 nav a {
-  color: rgb(95, 191, 255);
+  color: white;
   text-decoration: none;
   margin: 0 10px;
 }
 
 nav a:hover {
-  color: rgb(198, 115, 247);
+  color: #9933ff;
 }
 
 #container {
@@ -191,12 +191,13 @@ span.favorite:hover {
 
 div.gif-detailed .single {
   margin: auto;
-  width: 480px;
+  width: 300px;
+  height: 300px;
   padding: 50px;
   font-family: "Avenir", sans-serif;
   color: #33475b;
   position: absolute;
-  top: 70%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -230,10 +231,11 @@ div.gif-detailed .single {
 }
 
 #text-trending {
-  padding-left: 50px;
-  color: fuchsia;
+  padding-left: 8pt;
+  padding-top: 2pt;
+  color: #9933ff;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 30px;
+  font-size: 23px;
 }
 
 #footer {
@@ -283,51 +285,45 @@ div.gif-detailed .single {
   display: block;
 }
 
-
 .single {
-
   height: 208px;
   width: 208px;
-  
 }
 
 .poster-1 {
   color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin-top: 5pc;
-  font-size: 13px;;
+  margin-top: 4pc;
+  font-size: 16px;
 }
 
 .poster-2 {
-  color:white;
+  color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin-top: 10pc;
-  margin-left: 17px;
-  font-size: 15px;;
+  margin-top: 9pc;
+  margin-left: 25px;
+  font-size: 16px;
 }
 
 .text-about {
   text-align: center;
-  padding-top:  120px;
+  padding-top: 120px;
 }
-
 
 #upload-gif {
   padding-top: 50px;
-  padding-left: 30px;
+  padding-left: 10px;
   padding-bottom: 50px;
-  color: green;
+  color: #00ff99;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 30px;
-
+  font-size: 25px;
 }
 
 .submit-upload-button {
- background-color: red;
- color: black;
- border-color: black;
+  background-color: #ff6666;
+  color: black;
+  border-color: black;
   border-radius: 5px;
   height: 25px;
   width: 85px;
 }
-

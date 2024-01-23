@@ -19,7 +19,7 @@ import { renderFavoriteStatus } from '../events/favorites-events.js';
 export const toTrendingView = (trendingGifs) => {
   return `
    <section class="trending">
-   <h2 id="text-trending"> Trending Giphy &#8482</h2>
+   <h2 id="text-trending"> Trending GIFs &#8482</h2>
    <ul class="trending-gif">
    ${trendingGifs.map(toTrendingItemView).join('')}
    <ul>
@@ -114,7 +114,7 @@ const toGifDetailed = (gif) => {
           <p>User: unknown &#128577</p>
           <p>Rating: ${gif.rating}</p>
           <p>Uploaded: ${gif.import_datetime}</p>
-          <p>Source: <a href="${gif.source}" target="_blank">View Source</a></p>
+          <p>Source: <a href="${gif.source}" target="_blank" style="color: #00CCFF;">View Source</a></p>
          
        </div>
     </div>
