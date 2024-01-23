@@ -9,8 +9,8 @@ import { toTrendingView } from './trending-view.js';
  * @returns {string} The HTML string representing the upload view.
  */
 export const toUploadNowView = (gifs) => `
-<form id="formElem">
-    Upload GIF: <input id="upl" type="file" name="file" accept="image/*">
+<form id="upload-gif">
+    Upload your GIF &#8594; <input id="upl" type="file" name="file" accept="image/*">
     <input type="submit" class='submit-upload-button'>
   </form>
   ${toTrendingView(gifs)}
@@ -23,7 +23,7 @@ export const toUploadNowView = (gifs) => `
  */
 export const toUploadNowEmptyView = () => `
 <form id="formElem">
-Upload GIF: <input id="upl" type="file" name="file" accept="image/*">
+Upload GIF: <input id="upl" type="file" name="file" accept="image/*" id="text-file">
     <input type="submit" class='submit-upload-button'>
   </form>
   `;
