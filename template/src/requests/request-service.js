@@ -74,8 +74,4 @@ export const loadSingleGif = async (id) => {
 
 
 
-export const loadUploadedGifs = () => {
-
-  return
-}
 

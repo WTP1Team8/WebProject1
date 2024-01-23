@@ -16,6 +16,8 @@ export const EMPTY_HEART = "&#x1F90D";
 
 export const API_KEY = "8hn1LkoWv2wIkMKj670q5ad0SZ85dlOV";
 
+export const USERNAME = "radoslavkostadinov";
+
 export const getTrendingUrl = (
   limit = 25,
   offset = 0
