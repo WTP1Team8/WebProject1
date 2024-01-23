@@ -1,51 +1,50 @@
-import { getTrendingUrl, getSearchUrl,getIdUrl } from '../common/constants.js';
+import { getTrendingUrl, getSearchUrl, getIdUrl } from "../common/constants.js";
 /**
- * 
+ *
  * @returns {Promise<Array<{
  * id: string,
-* rating: string,
-* title: string,
-* images: {
-*  fixed_width: {
-*  url: string,
-* },
-* },
-* user: {
-*  avatar_url: string,
-*  username: string,
-* },
-* }>>}
+ * rating: string,
+ * title: string,
+ * images: {
+ *  fixed_width: {
+ *  url: string,
+ * },
+ * },
+ * user: {
+ *  avatar_url: string,
+ *  username: string,
+ * },
+ * }>>}
  */
-export const loadTrendingGifs = async() => {
+export const loadTrendingGifs = async () => {
   const response = await fetch(getTrendingUrl(36));
   const result = await response.json();
-  
-    return result.data
+
+  return result.data;
 };
 
-
 /**
- * 
- * @param {string} query 
+ *
+ * @param {string} query
  * @returns {Promise<Array<{
-* id: string,
-* rating: string,
-* title: string,
-* images: {
-*  fixed_width: {
-*  url: string,
-* },
-* },
-* user: {
-*  avatar_url: string,
-*  username: string,
-* },
-* }>>}
+ * id: string,
+ * rating: string,
+ * title: string,
+ * images: {
+ *  fixed_width: {
+ *  url: string,
+ * },
+ * },
+ * user: {
+ *  avatar_url: string,
+ *  username: string,
+ * },
+ * }>>}
  */
-export const loadSearchGifs = async (query = '') => {
+export const loadSearchGifs = async (query = "") => {
   // const response = await fetch(getSearchUrl(query));
   // const result = await response.json();
-  
+
   // return result.data
 
   try {
@@ -58,20 +57,19 @@ export const loadSearchGifs = async (query = '') => {
     const result = await response.json();
     return result.data;
   } catch (error) {
-    console.error('Error fetching data:', error.message);
+    console.error("Error fetching data:", error.message);
     // Handle the error or rethrow it if necessary
     throw error;
   }
 };
 
-
 export const loadSingleGif = async (id) => {
   const response = await fetch(getIdUrl(id));
-  const result = await response.json();
+  if (response.ok) {
+    const result = await response.json();
 
-  return result.data;
+    return result.data;
+  } else {
+    return;
+  }
 };
-
-
-
-

@@ -18,7 +18,11 @@ import { getUploaded } from "../data/uploaded.js";
 import { toTrendingView, toSingleGifView } from "../views/trending-view.js";
 import { toRandomItemView } from "../views/favorites-view.js";
 import { getRandomGIF } from "../views/favorites-view.js";
-import {toUploadNowView, toUploadNowEmptyView, getUploadGif} from "../views/upload-view.js";
+import {
+  toUploadNowView,
+  toUploadNowEmptyView,
+  getUploadGif,
+} from "../views/upload-view.js";
 
 // public API
 export const loadPage = (page = "") => {
@@ -27,7 +31,7 @@ export const loadPage = (page = "") => {
       setActiveNav(HOME);
       return renderHome();
 
-    case TRENDING: 
+    case TRENDING:
       setActiveNav(TRENDING);
       return renderTrending();
 
@@ -87,9 +91,12 @@ const renderUploaded = async () => {
   const uploadedGifs = getUploaded();
 
   if (uploadedGifs.length === 0) {
-    q(CONTAINER_SELECTOR).innerHTML = toUploadNowEmptyView()
+    q(CONTAINER_SELECTOR).innerHTML = toUploadNowEmptyView();
   } else {
-    const gifs = await Promise.all(uploadedGifs.map((id) => loadSingleGif(id)));
-    q(CONTAINER_SELECTOR).innerHTML = toUploadNowView(gifs);
+    const gifs = await Promise.all(
+      uploadedGifs.reverse().map((id) => loadSingleGif(id))
+    );
+    const existingGifs = gifs.filter((e) => e !== undefined);
+    q(CONTAINER_SELECTOR).innerHTML = toUploadNowView(existingGifs);
   }
 };

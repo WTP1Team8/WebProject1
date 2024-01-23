@@ -1,5 +1,6 @@
 import { FAVORITES, HOME, EMPTY_HEART, UPLOADED } from "./common/constants.js";
 import { toggleFavoriteStatus } from "./events/favorites-events.js";
+import { addUploaded } from "./data/uploaded.js";
 import { q } from "./events/helpers.js";
 import { loadPage } from "./events/navigation-events.js";
 import { renderSearchItems } from "./events/search-events.js";
@@ -28,19 +29,22 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    if(event.target.classList.contains('submit-upload-button')) {
-      event.preventDefault();
-      getUploadGif();
-      loadPage(UPLOADED);
-    };
+    if (event.target.classList.contains("submit-upload-button")) {
+      (async () => {
+        event.preventDefault();
+
+        addUploaded(await getUploadGif())
+        loadPage(UPLOADED);
+      })();
+
+      
+    }
   });
 
   // search events
   q("input#search").addEventListener("input", (e) => {
     renderSearchItems(e.target.value);
   });
-
-
 
   loadPage(HOME);
 });
