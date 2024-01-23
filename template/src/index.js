@@ -10,12 +10,12 @@ import { getUploadGif } from "./views/upload-view.js";
 document.addEventListener("DOMContentLoaded", () => {
   // add global listener
   document.addEventListener("click", (event) => {
-    // nav events
+    
     if (event.target.classList.contains("nav-link")) {
       loadPage(event.target.getAttribute("data-page"));
     }
 
-    // show movie events
+    
     if (event.target.classList.contains("gif-link")) {
       renderGifDetails(event.target.getAttribute("data-gif-id"));
     }
