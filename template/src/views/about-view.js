@@ -1,3 +1,7 @@
+/**
+ * Returns the HTML markup for the About View.
+ * @returns {string} The HTML markup for the About View.
+ */
 export const toAboutView = () => `
 <div class="text-about">
 <h1>About the app</h1>

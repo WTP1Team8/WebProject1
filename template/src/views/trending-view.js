@@ -1,4 +1,4 @@
-import { renderFavoriteStatus } from "../events/favorites-events.js";
+import { renderFavoriteStatus } from '../events/favorites-events.js';
 /**
  *
  * @param {Array<{
@@ -21,12 +21,18 @@ export const toTrendingView = (trendingGifs) => {
    <section class="trending">
    <h2 id="text-trending"> Trending Giphy &#8482</h2>
    <ul class="trending-gif">
-   ${trendingGifs.map(toTrendingItemView).join("")}
+   ${trendingGifs.map(toTrendingItemView).join('')}
    <ul>
    </section>
    `;
 };
 
+/**
+ * Converts a trending item object into a trending item view HTML string.
+ *
+ * @param {Object} trendingItem - The trending item object.
+ * @returns {string} The HTML string representing the trending item view.
+ */
 export const toTrendingItemView = (trendingItem) => `
    <li class="gif-container">
        <a href="#/trending/${trendingItem.id}" >
@@ -40,6 +46,12 @@ export const toTrendingItemView = (trendingItem) => `
    </li>
 `;
 
+/**
+ * Converts a trending item into a trending random view HTML string.
+ *
+ * @param {Object} trendingItem - The trending item object.
+ * @returns {string} The HTML string representing the trending random view.
+ */
 export const toTrendingRandomView = (trendingItem) => `
    <li class="gif-random">
        <a href="#/trending/${trendingItem.id}" >
@@ -53,13 +65,19 @@ export const toTrendingRandomView = (trendingItem) => `
    </li>
 `;
 
+/**
+ * Converts a gif view object into a single gif view HTML string.
+ *
+ * @param {Object} gifView - The gif view object.
+ * @returns {string} The HTML string representing the single gif view.
+ */
 export const toSingleGifView = (gifView) => {
   return `
           <div class="gif-detailed">
              <div class="poster">
                 <img  src="${gifView.images.fixed_width.url}" alt="${
-    gifView.title
-  }" class="single">
+  gifView.title
+}" class="single">
              </div>
              <div class="movie-info">
                 ${toGifDetailed(gifView)}
@@ -68,8 +86,12 @@ export const toSingleGifView = (gifView) => {
        `;
 };
 
-//  <img src="${gifView.user.avatar_url}" alt="${gifView.user.username}"></img>
-
+/**
+ * Converts a gif object into a detailed HTML representation.
+ *
+ * @param {Object} gif - The gif object to convert.
+ * @returns {string} - The HTML representation of the gif.
+ */
 const toGifDetailed = (gif) => {
   if (gif.user && gif.user.username) {
     return `
@@ -100,5 +122,3 @@ const toGifDetailed = (gif) => {
  `;
   }
 };
-
-

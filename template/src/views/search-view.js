@@ -1,5 +1,5 @@
-import { toTrendingItemView } from "./trending-view.js";
-import { EMPTY_HEART } from "../common/constants.js";
+import { toTrendingItemView } from './trending-view.js';
+import { EMPTY_HEART } from '../common/constants.js';
 /**
  *
  * @param {Array<{
@@ -22,7 +22,7 @@ export const toSearchView = (searchedGifs, searchTerm) => `
   <div id="movies">
     <h1>Gifs found for "${searchTerm}":</h1>
     <div class="trending-gif">
-    ${searchedGifs.map((gif) => toTrendingItemView(gif)).join("")}
+    ${searchedGifs.map((gif) => toTrendingItemView(gif)).join('')}
     </div>
   </div>
   `;
@@ -43,4 +43,4 @@ export const toSearchedItemView = (searchedItem) => `
 </li>
 `;
 
-// GifbyId URL - `https://api.giphy.com/v1/gifs/${gif_id}?api_key=hn1LkoWv2wIkMKj670q5ad0SZ85dlOV&rating=g`
+
