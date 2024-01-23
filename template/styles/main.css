@@ -32,7 +32,7 @@ div#app {
 
 header {
   grid-area: header;
-  height: 170px;
+  height: 220px;
   background: url("../images/GIPHY\ Transparent\ 270px.png");
   background-size: cover;
   background-position: center;
@@ -41,6 +41,14 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+header img {
+  /* Set a fixed height for the image */
+  height: 100%; /* Make the image fill the entire height of the header */
+  width: auto; /* Maintain the image's aspect ratio */
+  display: block;
+  margin: 0 auto; /* Center the image horizontally within the header */
 }
 
 nav {
