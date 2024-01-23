@@ -79,7 +79,7 @@ const toGifDetailed = (gif) => {
           <p>User: ${gif.user.username}</p>
           <p>Rating: ${gif.rating}</p>
           <p>Uploaded: ${gif.import_datetime}</p>
-          <p>Avatar: <img src="${gif.user.avatar_url}" alt="${gif.user.username}" class="avatar" style="max-width: 100px;">
+          <img src="${gif.user.avatar_url}" alt="${gif.user.username}" class="avatar" style="max-width: 100px;">
        </div>
     </div>
  
