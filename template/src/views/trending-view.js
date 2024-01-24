@@ -19,7 +19,7 @@ import { renderFavoriteStatus } from '../events/favorites-events.js';
 export const toTrendingView = (trendingGifs) => {
   return `
    <section class="trending">
-   <h2 id="text-trending"> Trending GIFs &#8482</h2>
+   <h2 id="text-trending"> Trending Giphy &#8482</h2>
    <ul class="trending-gif">
    ${trendingGifs.map(toTrendingItemView).join('')}
    <ul>
@@ -35,7 +35,7 @@ export const toTrendingView = (trendingGifs) => {
  */
 export const toTrendingItemView = (trendingItem) => `
    <li class="gif-container">
-       <a href="#/trending/${trendingItem.id}" >
+       <a href="#/trending/${trendingItem}" >
            <img class="gif-link" data-gif-id="${trendingItem.id}" src="${
   trendingItem.images.fixed_width.url
 }" alt="${trendingItem.title}">
@@ -54,7 +54,7 @@ export const toTrendingItemView = (trendingItem) => `
  */
 export const toTrendingRandomView = (trendingItem) => `
    <li class="gif-random">
-       <a href="#/trending/${trendingItem.id}" >
+       <a href="#/trending/${trendingItem}" >
            <img class="gif-link" data-gif-id="${trendingItem.id}" src="${
   trendingItem.images.fixed_width.url
 }" alt="${trendingItem.title}">
@@ -101,7 +101,10 @@ const toGifDetailed = (gif) => {
           <p>User: ${gif.user.username}</p>
           <p>Rating: ${gif.rating}</p>
           <p>Uploaded: ${gif.import_datetime}</p>
-          <img src="${gif.user.avatar_url}" alt="${gif.user.username}" class="avatar" style="max-width: 100px;">
+          <p>Favorite ${renderFavoriteStatus(gif.id)}</p><br>
+          <img src="${gif.user.avatar_url}" alt="${
+  gif.user.username
+}" class="avatar" style="max-width: 100px;">
        </div>
     </div>
  
@@ -114,7 +117,10 @@ const toGifDetailed = (gif) => {
           <p>User: unknown &#128577</p>
           <p>Rating: ${gif.rating}</p>
           <p>Uploaded: ${gif.import_datetime}</p>
-          <p>Source: <a href="${gif.source}" target="_blank" style="color: #00CCFF;">View Source</a></p>
+          <p>Favorite${renderFavoriteStatus(gif.id)}</p>
+          <p>Source: <a href="${
+  gif.source
+}" target="_blank" style="color: #FFF35C;">View Source</a></p>
          
        </div>
     </div>

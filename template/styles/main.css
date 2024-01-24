@@ -80,6 +80,26 @@ nav a:hover {
   color: #9933ff;
 }
 
+nav #h:hover {
+  color: #00ff99;
+}
+
+nav #t:hover {
+  color: #ff6666;
+}
+
+nav #a:hover {
+  color: #9933ff;
+}
+
+nav #favorites:hover {
+  color: #fff35c;
+}
+
+nav #uploaded:hover {
+  color: #00ccff;
+}
+
 #container {
   grid-area: container;
   background-color: rgba(0, 0, 0, 0.5);
@@ -293,16 +313,16 @@ div.gif-detailed .single {
 .poster-1 {
   color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin-top: 4pc;
-  font-size: 16px;
+  margin-top: -1pc;
+  font-size: 17px;
 }
 
 .poster-2 {
   color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin-top: 9pc;
-  margin-left: 25px;
-  font-size: 16px;
+  margin-top: 6pc;
+  margin-left: 5px;
+  font-size: 17px;
 }
 
 .text-about {

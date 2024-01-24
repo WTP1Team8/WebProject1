@@ -5,14 +5,14 @@
  */
 export const toHomeView = () => `
 <div id="home">
-  <h1>Gif(S)ter</h1>
+  <h1 style="color:#62259F;">Giphy</h1>
   <div class="content">
-    <p>Single page app</p>
+    <p style="color:white;">Single page app</p>
     <ul>
-      <li>Browse trending giphy's</li>
-      <li>Add and remove giphy from favorites</li>
-      <li>Search for giphy by title</li>
-      <li>Upload giphy</li>
+      <li style="color:#FFF35C;">Browse trending giphy's</li>
+      <li style="color:#00FF99;">Add and remove giphy from favorites</li>
+      <li style="color:#FF6666;">Search for giphy by title</li>
+      <li style="color:#00CCFF;">Upload giphy</li>
     </ul>
   </div>
 </div>
