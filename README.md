@@ -1,6 +1,6 @@
 <img src="https://webassets.telerikacademy.com/images/default-source/logos/telerik-academy.svg" alt="logo" width="300px" style="margin-top: 20px;"/>
 
-# Giphy
+# Giphy - https://web-project1-ramx.vercel.app/
 
 ### 1. Description
 
